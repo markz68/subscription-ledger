@@ -1,6 +1,6 @@
 # Subscription Ledger
 
-Version 1.0.1. A browser-local subscription and membership tracker. New installations always start empty. No personal starter list is included in this repository.
+Version 1.0.2. A browser-local subscription and membership tracker. New installations always start empty. No personal starter list is included in this repository.
 
 ## Features
 
@@ -37,10 +37,14 @@ JSON files contain personal subscription data. Keep them private. CSV is for vie
 
 Buildless ES modules in the repository root. Run `npm test` for schedule, cost, validation, and CSV checks. Serve through a static HTTP server for development, for example `python -m http.server 8000`. `sw.js` versions the app's offline cache; bump it with the visible version for releases. Updates wait for existing app windows to close before the new worker activates. No versioned filenames are used. GitHub Pages serves `main` from the repository root. No build step or dependencies are required.
 
+## Latest changes
+
+1.0.2 uses the existing straight-line home-screen icon inside the app, replaces the settings gear with a centered symmetric SVG, and fixes the stale mobile header version label. Home-screen icon assets and subscription storage keys are unchanged. Close all app windows and reopen after an update so the refreshed service worker can activate.
+
 ## Initial release
 
-1.0.1 moves hosting to GitHub Pages. The initial version adds the dashboard, management, bundles, promotional rates, local backups, recovery, CSV export, themes, and PWA assets. Google Drive sync is deferred. On-device Android/Windows install and offline behavior require verification after publication.
+1.0.1 moved hosting to GitHub Pages. The initial version adds the dashboard, management, bundles, promotional rates, local backups, recovery, CSV export, themes, and PWA assets. Google Drive sync is deferred. On-device Android/Windows install and offline behavior require verification after publication.
 
 ## GitHub Pages setup
 
-Enable Pages in repository Settings → Pages using **Deploy from a branch**, **main**, **/ (root)**. The intended app address is `https://markz68.github.io/subscription-ledger/`; publication must be verified separately from saving code. Relative asset paths, manifest scope, and service worker registration support this project subpath.
+Enable Pages in repository Settings → Pages using **Deploy from a branch**, **main**, **/ (root)**. The app is hosted at https://markz68.github.io/subscription-ledger/. Relative asset paths, manifest scope, and service worker registration support this project subpath.
